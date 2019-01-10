@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+while(<>) {
+    chop;
+    #print $_;
+    @word = split;
+    printf("\"%s\",		%s\n", $word[0], $word[0]);
+
+    $_ = $word[1];
+    if(!(/0/)) {
+        printf("\"%s\W		%s,\n", $word[1], $word[1]);
+    }
+}

@@ -1,0 +1,39 @@
+bin/test_suite  :
+section                 size      addr
+.interp                   28       568
+.note.ABI-tag             32       596
+.note.gnu.build-id        36       628
+.gnu.hash                248       664
+.dynsym                 3960       912
+.dynstr                 6769      4872
+.gnu.version             330     11642
+.gnu.version_r           224     11976
+.rela.dyn              11016     12200
+.rela.plt               2592     23216
+.init                     23     25808
+.plt                    1744     25840
+.plt.got                   8     27584
+.text                 295209     27600
+.fini                      9    322812
+.rodata                14320    322848
+.eh_frame_hdr           4828    337168
+.eh_frame              30760    342000
+.gcc_except_table      21697    372760
+.init_array               16   2491680
+.fini_array               16   2491696
+.data.rel.ro            5344   2491712
+.dynamic                 528   2497056
+.got                     952   2497584
+.data                    168   2498560
+.bss                   10552   2498752
+.comment                  37         0
+.debug_aranges         12416         0
+.debug_info          1667935         0
+.debug_abbrev           7049         0
+.debug_line           152664         0
+.debug_str           1125645         0
+.debug_loc           1413832         0
+.debug_ranges         319728         0
+Total                5110715
+
+
