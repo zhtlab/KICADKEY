@@ -130,7 +130,7 @@ const static rtosTaskInfo_t     mainTaskList[] = {
   },
 };
 
-static uint8_t  mainCommandBuf[64];
+static uint8_t  mainCommandBuf[128];
 static int      mainCommandPos = 0;
 void
 MainUartLoop(void)

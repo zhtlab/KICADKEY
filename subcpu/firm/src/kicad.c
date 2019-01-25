@@ -43,7 +43,7 @@ extern int      dUsbHid;
 #include        "kicad.h"
 
 
-#define KICAD_DEBUG_SHOW                1
+#define KICAD_DEBUG_SHOW                0
 #define KICAD_HOTKEY_NAME               1
 
 
@@ -77,7 +77,7 @@ const kicadKeyList_t    kicadKeyList[] = {
 };
 #define KICAD_KEYLIST_COUNT     (sizeof(kicadKeyList)/sizeof(kicadKeyList_t))
 /*************************************
- *  default key assign for PCBNEW
+ *  default key assign for EESCHEMA
  *  +-------------+-------------+-------------+-------------+
  *  |(ESC)        |(CALC)       |(TAB)        |(=)          |
  *  |             |sch/pcb sel  |             |             |
@@ -565,7 +565,12 @@ const kicadKeyText_t    KicadHotkeyPcbList[] = {
   {"KIPCB_ADDTR",          KIPCB_ADDTR},
   {"KIPCB_ADDVIA",         KIPCB_ADDVIA},
   {"KIPCB_AUTOZOOM",       KIPCB_AUTOZOOM},
+  {"KIPCB_CUTOP",          KIPCB_CUTOP},
+  {"KIPCB_CUIN1",          KIPCB_CUIN1},
+  {"KIPCB_CUIN2",          KIPCB_CUIN2},
+  {"KIPCB_CUBOTTOM",       KIPCB_CUBOTTOM},
   {"KIPCB_CUNEXT",         KIPCB_CUNEXT},
+  {"KIPCB_CUPREV",         KIPCB_CUPREV},
   {"KIPCB_DEL",            KIPCB_DEL},
   {"KIPCB_DELTRSEG",       KIPCB_DELTRSEG},
   {"KIPCB_DRAG",           KIPCB_DRAG},
