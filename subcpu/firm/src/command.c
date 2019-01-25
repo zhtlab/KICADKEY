@@ -113,6 +113,11 @@ CommandExec(int ac, uint8_t *av[])
 
     __set_MSP(*((uint32_t*) 0x0000));
     ((void (*)(void)) *((uint32_t*) 0x0004))();
+
+  } else if(!strncmp(av[0], "version", 7)) {
+    extern const uint8_t           strVersionText[];
+    puts(strVersionText);
+    puts("\n");
   }
 
   return 0;

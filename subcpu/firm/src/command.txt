@@ -1,5 +1,5 @@
 getlist                 show key list
-setlist [key]...        set key
+setset [key]...         set key
                           [code] [keyname] [cnt0] [key01] [key02] ... [cnt1] [key11] [key12]
                           code     scan code
                           keyname  char of the key top
@@ -14,3 +14,6 @@ save                    the key maps are saved to EEPROM
 load                    the key maps are loaded from EEPROM
 erase                   the area of key maps in EEPROM is erased
 dump                    the area of key maps in EEPROM is dumped
+
+firmupdate              enter the firmupdate mode
+reboot                  reboot
