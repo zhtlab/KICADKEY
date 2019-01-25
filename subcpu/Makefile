@@ -32,7 +32,7 @@ TARGET_BOOT		= boot/$(OBJDIR)/bootloader
 TARGET_FIRM		= firm/$(OBJDIR)/firm/firm_crc
 TEMP_FILE		= file.temp
 
-DIRECTORIES		= firm boot
+DIRECTORIES		= lib/libaeabi-cortexm0  firm boot
 
 CONFIG_ORIG		= config
 CONFIG_H		= config.h
@@ -50,6 +50,8 @@ MAKE			= make
 MOT2BIN			= $(CONFIG_ROOTDIR)/bin/mot2bin.rb
 0XFF			= $(CONFIG_ROOTDIR)/bin/0xff
 MKDIR			= mkdir
+PUSHD			= pushd
+POPD			= popd
 
 
 top: compile all
@@ -72,7 +74,7 @@ compile: $(DIRECTORIES)
 	@for i in $(DIRECTORIES); \
 	do \
 		echo \#\#\# compile in $$i; \
-		$(CD) $$i; $(MAKE) all; $(CD) ..; \
+		$(PUSHD) $$i; $(MAKE) all; $(POPD); \
 	done
 
 
@@ -88,8 +90,11 @@ bootfirm_cat:
 
 
 clean:
-	$(CD) boot; $(MAKE) $@; $(CD) ..; \
-	$(CD) firm; $(MAKE) $@; $(CD) ..; \
+	@for i in $(DIRECTORIES); \
+	do \
+		echo \#\#\# clean in $$i; \
+		$(PUSHD) $$i; $(MAKE) clean; $(POPD); \
+	done
 	$(RM) -rf obj
 
 
