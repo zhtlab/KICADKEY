@@ -621,8 +621,12 @@ KicadSetKeyMap(int ctg, int scancode, int shift, kicadKeyToggle_t *map)
   int                   row, col;
 
 #if 1
-  printf("# ctg:%x code:%x shift:%x cnt:%x %x\n",
-         ctg, scancode, shift, map->cnt, map->key[0]);
+  printf("# ctg:%x code:%x shift:%x cnt:%x",
+         ctg, scancode, shift, map->cnt);
+  for(int i = 0; i < map->cnt; i++) {
+    printf(" %x", map->key[i]);
+  }
+  puts("\n");
 #endif
 
   row =  scancode       & 0xf;
