@@ -80,8 +80,8 @@ bootfirm_cat:
 	@echo \#\#\# concatinate bootloader and firmware
 	@$(MKDIR) -p obj
 	@$(MOT2BIN) $(TARGET_BOOT).srec > $(TEMP_FILE);
-	@$(0XFF) | $(DD) bs=1k count=32 >>  $(TEMP_FILE)  2> /dev/null
-	@$(DD) if=$(TEMP_FILE) of=$(TEMP_FILE)2 bs=1k count=32  2> /dev/null
+	@$(0XFF) | $(DD) bs=1k count=16 >>  $(TEMP_FILE)  2> /dev/null
+	@$(DD) if=$(TEMP_FILE) of=$(TEMP_FILE)2 bs=1k count=16  2> /dev/null
 	@$(CAT) $(TARGET_FIRM).bin >> $(TEMP_FILE)2
 	@$(MV) -f $(TEMP_FILE)2 obj/$(TARGET).bin
 	@$(RM) $(TEMP_FILE)
