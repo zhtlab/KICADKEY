@@ -143,7 +143,7 @@ MainEntry(int forceUpdate)
     if(sp != FLASH_ERASED_VALUE32 &&
        pc != FLASH_ERASED_VALUE32 &&
        !(sp & 3) &&
-       (pc & 0xfff00000) == 0x08000000) {
+       (pc & 0xfff00000) == POR_PC_ENTRY_BASE) {
       if(Boot1IsFirmCrcCorrect()) {
 	tout = Boot1GetCounter();
 	while((tout - Boot1GetCounter()) < (CONFIG_FIRMUPDATE_POWERSW_TIMEOUT)) {
