@@ -32,7 +32,7 @@ CFLAGS_DEV	= -g -Os -mthumb -mcpu=$(CPU_CORTEX_ARCH) -mlittle-endian \
 
 ASFLAGS		= -acdghlmns=${@:.o=.lst} --defsym TARGETCODE=$(TARGETCODE)
 
-LDCONFIG	= $(CONFIG_ROOTDIR)/../target/$(DEVICE_TYPE)/$(TARGET)/$(TARGET).ld
+LDCONFIG	= ../target/$(DEVICE_TYPE)/$(TARGET)/$(TARGET).ld
 
 LDFLAGS_MAP     = -Wl,-Map=${@:.elf=.map},--cref
 LDFLAGS_SEC     = -Wl,--gc-sections

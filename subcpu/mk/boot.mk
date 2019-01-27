@@ -31,7 +31,7 @@ MK_DIR		= $(CONFIG_ROOTDIR)/../mk
 # include
 #
 include		../config
-include		$(CONFIG_ROOTDIR)/../target/$(DEVICE_TYPE)/config
+include		../target/$(DEVICE_TYPE)/config
 include		$(MK_DIR)/def.mk
 include		$(MK_DIR)/cortex-m.mk
 
@@ -69,8 +69,7 @@ endif
 ######################################################
 # sources
 #
-include		$(CONFIG_MK)
-include		$(CONFIG_ROOTDIR)/../target/$(DEVICE_TYPE)/$(TARGET)/sources.mk
+include		../target/$(DEVICE_TYPE)/$(TARGET)/sources.mk
 vpath		%.c $(sort $(dir $(SOURCES)))
 vpath		%.s $(sort $(dir $(SOURCESASM)))
 
@@ -83,7 +82,7 @@ LDFLAGS		= $(LDFLAGS_CFG) $(LDFLAGS_SEC)  $(LDFLAGS_MAP)
 
 DEPENDS		= $(OBJS:.o=.d)
 
-
+include		../target/$(DEVICE_TYPE)/$(TARGET)/sources.mk
 
 ######################################################
 # tool definitions
