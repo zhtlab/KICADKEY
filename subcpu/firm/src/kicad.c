@@ -85,12 +85,12 @@ const kicadKeyList_t    kicadKeyList[] = {
  *  |S            |S            |S            |S            |
  *  +-------------+-------------+-------------+-------------+
  *  |(NUM)        |(/)          |(*)          |(BS)         |
- *  |             |  polyline   |  text       |             |
- *  |S            |S            |S            |S            |
+ *  |             |  polyline   |  edit (1)   |             |
+ *  |S            |S            |S text       |S            |
  *  +-------------+-------------+-------------+-------------+
  *  |(7)          |(8)          |(9)          |(-)          |
  *  |S add nc     |  add power  |  add comp   |  leave sht  |
- *  |S add junct  |S add glabel |S edit comp  |S            |
+ *  |S add junct  |S add glabel |S edit (2)   |S            |
  *  +-------------+-------------+-------------+-------------+
  *  |(4)          |(5)          |(6)          |(+)          |
  *  |  start bus  |  fit        |  start wire |  (grid next)|
@@ -101,8 +101,8 @@ const kicadKeyList_t    kicadKeyList[] = {
  *  |S mirrorY    |S            |S drag       |             |
  *  +-------------+-------------+-------------+             |
  *  |(0/INS)                    |(./DEL)      |             |
- *  |  repeat                   |  del        |             |
- *  |S                          |S            |             |
+ *  |  copy                     |  del        |             |
+ *  |S repeat                   |S            |             |
  *  +---------------------------+-------------+-------------+
  *  "(xxx)" is character print on keys
  *  "yyy" is the normal character to send
@@ -137,15 +137,15 @@ kicadKeyMap_t   kicadKeyMapSch[CONFIG_KEY_COL_CNT][CONFIG_KEY_ROW_CNT] = {
     KISCH_NONE,          0, 0, 0,  0, 0},
    {KICAD_SHIFT,         0, 0, 0,  1, 0,   /* ENT */
     KICAD_SHIFT,         0, 0, 0,  1, 0},
-   {KISCH_NONE,          0, 0, 0,  0, 0,   /* .   */
+   {KISCH_DELETE,        0, 0, 0,  0, 0,   /* .   */
     KISCH_NONE,          0, 0, 0,  0, 0}},
   /* Column 2       =,   na,    *,    9,    6,    3,   na,   */
   {{KISCH_NONE,          0, 0, 0,  0, 0,   /* =   */
     KISCH_NONE,          0, 0, 0,  0, 0},
    {KISCH_NONE,          0, 0, 0,  0, 0,   /* na  */
     KISCH_NONE,          0, 0, 0,  0, 0},
-   {KISCH_TEXT,          0, 0, 0,  1, 0,   /* *   */
-    KISCH_NONE,          0, 0, 0,  0, 0},
+   {KISCH_EDIT,          0, 0, 0,  1, 0,   /* *   */
+    KISCH_TEXT,          0, 0, 0,  1, 0},
    {KISCH_ADDCOMP,       0, 0, 0,  1, 0,   /* 9   */
     KISCH_EDIT,          0, 0, 0,  1, 0},
    {KISCH_WIRE,          0, 0, 0,  1, 0,   /* 6   */
@@ -182,8 +182,8 @@ kicadKeyMap_t   kicadKeyMapSch[CONFIG_KEY_COL_CNT][CONFIG_KEY_ROW_CNT] = {
     KISCH_NONE,          0, 0, 0,  1, 0},
    {KISCH_MIRRORX,       0, 0, 0,  1, 0,   /* 1   */
     KISCH_MIRRORY,       0, 0, 0,  1, 0},
-   {KISCH_REPEAT,        0, 0, 0,  1, 0,   /* 0   */
-    KISCH_NONE,          0, 0, 0,  0, 0}},
+   {KISCH_COPY,          0, 0, 0,  1, 0,   /* 0   */
+    KISCH_REPEAT,        0, 0, 0,  1, 0}},
 };
 
 
@@ -555,6 +555,7 @@ const kicadKeyText_t    KicadHotkeySchList[] = {
   {"KISCH_TEXT",           KISCH_TEXT},
   {"KISCH_WIRE",           KISCH_WIRE},
   {"KISCH_WIREENTRY",      KISCH_WIREENTRY},
+  {"KISCH_COPY",           KISCH_COPY},
 };
 #define KICAD_HOSTKEY_SCHLIST_NUM       \
   (sizeof(KicadHotkeySchList)/sizeof(kicadKeyText_t))

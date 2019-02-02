@@ -61,6 +61,7 @@
 #define KISCH_LEAVESHT          ((KEYBOARD_BS) | (KICAD_MOD(KEYBOARD_LALT)))
 #define KISCH_POLYLINE          (KEYBOARD_I)
 #define KISCH_TEXT              (KEYBOARD_T)
+#define KISCH_COPY              (KEYBOARD_C)
 
 /*********************************************************
  * KICAD PCBNEW  key assignment
